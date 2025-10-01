@@ -45,7 +45,7 @@ live-polling-system/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/live-polling-system.git
+git clone https://github.com/Riddhima-sh/live-polling-system.git
 cd live-polling-system
 ```
 
@@ -61,7 +61,7 @@ cd ../frontend
 npm install
 ```
 
-### Running the Application
+### Running the Application Locally
 
 1. Start the backend server:
 ```bash
@@ -77,9 +77,55 @@ npm run dev
 
 3. Open your browser and navigate to `http://localhost:5173` (or the port shown in the terminal)
 
+## Deployment on Vercel
+
+### Option 1: Deploy via Vercel Dashboard (Recommended)
+
+1. **Sign up/Login to Vercel**: Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. **Import Project**: Click "New Project" and import your GitHub repository
+3. **Configure Settings**:
+   - Framework Preset: Other
+   - Build Command: `cd frontend && npm install && npm run build`
+   - Output Directory: `frontend/dist`
+   - Install Command: `npm install`
+4. **Deploy**: Click "Deploy" and wait for the build to complete
+
+### Option 2: Deploy via Vercel CLI
+
+1. **Install Vercel CLI**:
+```bash
+npm i -g vercel
+```
+
+2. **Login to Vercel**:
+```bash
+vercel login
+```
+
+3. **Deploy from project root**:
+```bash
+vercel --prod
+```
+
+### Environment Variables (Optional)
+If you need custom environment variables, add them in the Vercel dashboard:
+- Go to your project settings
+- Navigate to Environment Variables
+- Add any required variables
+
+### Live Demo
+Once deployed, your app will be available at: `https://your-project-name.vercel.app`
+
 ## Development
 
 The backend server runs on port 3000 and serves the API endpoints. The frontend development server runs on port 5173 and connects to the backend via Socket.IO for real-time communication.
+
+### API Endpoints
+- `GET /api/health` - Health check
+- `GET /api/polls` - Get all polls
+- `POST /api/polls` - Create a new poll
+- `GET /api/polls/:id` - Get specific poll
+- `POST /api/polls/:id/vote` - Vote on a poll
 
 ## Contributing
 

@@ -16,6 +16,10 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Keep development env files for reference
+!frontend/.env.development
+!frontend/.env.production
+
 # IDE/Editor files
 .vscode/
 .idea/

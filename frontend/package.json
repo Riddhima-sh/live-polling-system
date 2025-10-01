@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "buildCommand": "npm run build",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
